@@ -1,0 +1,113 @@
+<form name="submitForm" novalidate>
+	<!-- Error Message -->
+	<div class="container-fluid">
+		<div class="alert alert-danger" role="alert" ng-if="hasMyError">
+			<span>{{error}}
+				<button type="button" class="close" ng-click="AppCtrl.hideMyError()">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</span> <span>
+				<ol>
+					<li ng-repeat="errorMessage in ::myErrorMessages">{{myError}}</li>
+				</ol>
+			</span>
+		</div>
+	</div>
+
+	<div class="modal-header">
+		<button type="button" class="close"
+			ng-click="AppCtrl.closeModalWindow()">&times;</button>
+		<h4 class="modal-title">{{::languageConstants.get('ION Connection
+			Details' )}}</h4>
+		<button class="h5Button {{theme.button}}"
+			ng-click="AppCtrl.saveIONCONRecord()">{{::languageConstants.get('Save')}}</button>
+		<button class="h5Button {{theme.button}}"
+			ng-click="AppCtrl.displayDialog()">{{::languageConstants.get('Delete')}}</button>
+		<button class="h5Button {{theme.button}}"
+			ng-click="AppCtrl.closeModalWindow()">{{::languageConstants.get('Cancel')}}</button>
+
+
+		<tr input type="text" class="h5-input-xs" class="h5-color-graphite">
+			<h5>{{::languageConstants.get('ID')}}</h5>
+			<input type="text" class="h5-input-md"
+				ng-model="IONCONModule.IONCONRecord.PK01" name="PK01"
+				title="ID" style="text-align: right" readonly>
+		</tr>
+	</div>
+	<div class="modal-body">
+		<div class="panel {{theme.panel}}">
+			<div class="table-responsive h5-padding-md">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<table class="inlineTable">
+							<tr>
+								<td>
+									<table class="inlineTable">
+										<tr input type="text" class="h5-input-xs"
+											class="h5-color-graphite">
+											<td><h5>{{::languageConstants.get('Transaction')}}</h5></td>
+											<td>:</td>
+											<td><input type="TEXT" class="h5-input-xs"
+												ng-model="IONCONModule.IONCONRecord.PK02" name="PK02"
+												title="Port" style="text-align: left" readonly></td>
+										</tr>
+												<tr input type="text" class="h5-input-xs"
+											class="h5-color-graphite">
+											<td><h5>{{::languageConstants.get('Port')}}</h5></td>
+											<td>:</td>
+											<td><input type="TEXT" class="h5-input-xs"
+												ng-model="IONCONModule.IONCONRecord.PK03" name="PK03"
+												title="Port" style="text-align: left" readonly></td>
+										</tr>
+		
+										<tr input type="text" class="h5-input-xs"
+											class="h5-color-graphite">
+											<td><h5>{{::languageConstants.get('ION Port')}}</h5></td>
+											<td>:</td>
+											<td><input type="TEXT" class="h5-input-xs"
+												ng-model="IONCONModule.IONCONRecord.AL31" name="AL31"
+												title="Port" style="text-align: left" autofocus></td>
+										</tr>
+										<tr input type="text" class="h5-input-xs"
+											class="h5-color-graphite">
+											<td><h5>{{::languageConstants.get('URL')}}</h5></td>
+											<td>:</td>
+											<td><input type="text" class="h5-input-md"
+												ng-model="IONCONModule.IONCONRecord.AL32" name="AL32"
+												title="URL" style="text-align: left"></td>
+										</tr>
+										<tr input type="text" class="h5-input-xs"
+											class="h5-color-graphite">
+											<td><h5>{{::languageConstants.get('Path')}}</h5></td>
+											<td>:</td>
+											<td><input type="text" class="h5-input-md"
+												ng-model="IONCONModule.IONCONRecord.AL34" name="AL34"
+												title="Path" style="text-align: left"></td>
+										</tr>
+											<tr input type="text" class="h5-input-xs"
+											class="h5-color-graphite">
+											<td><h5>{{::languageConstants.get('Environment')}}</h5></td>
+											<td>:</td>
+											<td><input type="text" class="h5-input-md"
+												ng-model="IONCONModule.IONCONRecord.AL35" name="AL35"
+												title="Environment" style="text-align: left"></td>
+										</tr>
+									
+										<tr input type="text" class="h5-input-sm"
+											class="h5-color-graphite">
+											<td><h5>{{::languageConstants.get('Description')}}</h5></td>
+											<td>:</td>
+											<td><input type="TEXT" class="h5-input-md"
+												ng-model="IONCONModule.IONCONRecord.AL30" name="AL30"
+												title="Description" style="text-align: left"></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
